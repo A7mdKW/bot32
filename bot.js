@@ -715,43 +715,6 @@ if (message.content.startsWith(adminprefix + 'setavatar')) {
       
    
    
-const jimp = require('jimp');
-const Canvas = require('canvas');
-
-client.on('guildMemberAdd', member => {
-     const welcomer =  member.guild.channels.find('name', '☬-welcome');
-    if(!welcomer) return;
-      if(welcomer) {
-         moment.locale('ar-ly');
-         var m = member.user;
-        let yumz = new Discord.RichEmbed()
-        .setColor('#ff0000')
-        .setThumbnail(m.avatarURL)
-        .setAuthor(m.username,m.avatarURL)
-        .addField(': تاريخ دخولك الدسكورد',`${moment(member.user.createdAt).format('D/M/YYYY h:mm a')} **\n** \`${moment(member.user.createdAt).fromNow()}\``,true)            
-      
-         .setFooter(`${m.tag}`,"https://images-ext-2.discordapp.net/external/JpyzxW2wMRG2874gSTdNTpC_q9AHl8x8V4SMmtRtlVk/https/orcid.org/sites/default/files/files/ID_symbol_B-W_128x128.gif")
-     welcomer.send({embed:yumz});          
-         
-    
- }
-});
-
-
-
-
-
-
-//log
-
-
-client.on("guildMemberAdd", member => {
-  member.createDM().then(function (channel) {
-  return channel.send(` 
-**منور السيرفر و اتمنى تشوف القوانين
-**`) 
-}).catch(console.error)
-})
 
 client.on('message', message => {
     if(message.content == ('+profile')) {    
